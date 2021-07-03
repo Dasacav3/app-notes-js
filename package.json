@@ -2,8 +2,11 @@
   "name": "app-notes",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://dasacav3.github.io/app-notes-js",
   "main": "index.js",
   "scripts": {
+    "start" : "node app.js",
+    "deploy": "gh-pages -d public",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production --config webpack.config.js"
   },
@@ -17,6 +20,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
+    "gh-pages": "^3.2.3",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4",
     "webpack": "^5.42.0",
