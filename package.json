@@ -5,7 +5,6 @@
   "homepage": "https://dasacav3.github.io/app-notes-js",
   "main": "index.js",
   "scripts": {
-    "start" : "node app.js",
     "deploy": "gh-pages -d public",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production --config webpack.config.js"
