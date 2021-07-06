@@ -1,37 +1,70 @@
-<%- include("templates/head",{title:'Inicio'})  %> 
+<%- include("templates/head",{title:'Inicio'}) %>
 
 <div class="grid m-auto font-bahnscrift">
-    <header class="grid grid-cols-1 md:grid-cols-3 bg-red-500">
-        <h2 class="text-center md:text-left md:col-span-2 p-3 text-white font-bold text-xl">App notes</h2>
-        <ul class="flex justify-center md:flex-column md:justify-end p-3 text-white w-full">
-            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-            <li class="pl-3"><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
-        </ul>
-    </header>
-    <main class="container m-auto">
-        <div class="text-center text-3xl font-bold my-4">
-            <h1>Add you notes here!</h1>
-        </div>
-        <div class="grid grid-cols-1 justify-items-center">
-            <form action="#" class="flex flex-col bg-red-300 p-4 rounded-xl w-80">
-                <div>
-                    <label for="">Title</label> <br>
-                    <input type="text" class="w-full rounded-md"> <br>
-                </div>
-                <div>
-                    <label for="">Topic</label> <br>
-                    <input type="text" class="w-full rounded-md"> <br>
-                </div>
-                <div>
-                    <label for="">Description</label> <br>
-                    <textarea cols="30" rows="10" class="w-full resize-none rounded-md"></textarea> <br>
-                </div>
-                <div class="flex justify-center">
-                    <input type="submit" value="Save" class="px-3 py-1 bg-red-500 hover:bg-danger text-white rounded-xl cursor-pointer">
-                </div>
-            </form>
-        </div>
-    </main>
+	<header class="grid grid-cols-1 md:grid-cols-3 bg-red-500">
+		<h2 class="text-center md:text-left md:col-span-2 p-3 text-white font-bold text-xl">
+			App notes
+		</h2>
+		<ul class="flex justify-center md:flex-column md:justify-end p-3 text-white w-full">
+			<li>
+				<a href="#"><i class="fas fa-home"></i> Inicio</a>
+			</li>
+			<li class="pl-3">
+				<a href="#"><i class="fas fa-info-circle"></i> Conocer más</a>
+			</li>
+		</ul>
+	</header>
+	<main class="container m-auto">
+		<div class="text-center text-3xl font-bold my-4">
+			<h1>¡Añade una nota!</h1>
+		</div>
+		<div class="grid grid-cols-1 justify-items-center">
+			<form action="#" class="flex flex-col bg-red-300 p-4 rounded-xl w-80">
+				<div>
+					<label for="">Titulo</label> <br />
+					<input type="text" class="w-full rounded-md" /> <br />
+				</div>
+				<div>
+					<label for="">Tema</label> <br />
+					<input type="text" class="w-full rounded-md" /> <br />
+				</div>
+				<div>
+					<label for="">Descripcion</label> <br />
+					<textarea cols="30" rows="10" class="w-full resize-none rounded-md"></textarea> <br />
+				</div>
+				<div class="flex justify-center">
+					<input
+						type="submit"
+						value="Agregar"
+						class="px-3 py-1 bg-red-500 hover:bg-danger text-white rounded-xl cursor-pointer"
+					/>
+				</div>
+			</form>
+			<div class="mt-5">
+                <legend class="text-lg font-bold text-center">Listado de Notas</legend>
+				<table class="border-separate border border-red-800 w-80 lg:w-full">
+					<thead>
+						<tr>
+							<th class="border border-red-600">ID</th>
+							<th class="border border-red-600">Titulo</th>
+							<th class="border border-red-600">Tema</th>
+							<th class="border border-red-600">Descripción</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% arrayNotes.forEach(note => { %>
+						<tr>
+							<td class="border border-red-600"><%= note.id %></td>
+							<td class="border border-red-600"><%= note.title %></td>
+							<td class="border border-red-600"><%= note.topic %></td>
+							<td class="border border-red-600"><%= note.description %></td>
+						</tr>
+						<% }) %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
 </div>
 
-<%- include ("templates/footer") %> 
+<%- include ("templates/footer") %>
