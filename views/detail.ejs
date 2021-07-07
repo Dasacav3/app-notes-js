@@ -1,0 +1,45 @@
+<%- include("templates/head", {title: 'Editar'}) %>
+
+<div class="text-center text-3xl font-bold my-4">
+    <h1>Detalle nota</h1>
+</div>
+
+<div class="grid grid-cols-1 justify-items-center">
+    <% if (error) { %>
+        <p class="ml-3"><%= message %></p>
+        <a href="/" class="mt-5 text-center cursor-pointer hover:bg-red-600 p-2 bg-red-800 text-white rounded-lg">Volver al inicio</a>
+    <% } %>
+    <form id="formEdit" class="flex flex-col bg-red-300 p-4 rounded-xl w-80" data-id="<%= note._id %>">
+        <div>
+            <label for="title">Titulo</label> <br />
+            <input type="text" class="w-full rounded-md" name="title" id="title" value="<%= note.title %>" /> <br />
+        </div>
+        <div>
+            <label for="topic">Tema</label> <br />
+            <input type="text" class="w-full rounded-md" name="topic" id="topic" value="<%= note.topic %>"/> <br />
+        </div>
+        <div>
+            <label for="description">Descripción</label> <br />
+            <textarea
+                cols="30"
+                rows="10"
+                class="w-full resize-none rounded-md"
+                name="description"
+                id="description"
+            ><%= note.description %></textarea>
+            <br />
+        </div>
+        <div class="flex justify-center">
+            <input
+                type="submit"
+                value="Editar"
+                class="px-3 py-1 bg-red-500 hover:bg-danger text-white rounded-xl cursor-pointer"
+            />
+        </div>
+    </form>
+    <div class="my-6">
+        <button id="btnDelete" class="px-3 py-1 bg-danger hover:bg-danger text-white rounded-lg cursor-pointer" data-id="<%= note._id %>">Eliminar nota</button>
+    </div>
+</div>
+
+<%- include("templates/footer") %>
