@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d public",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
     "build": "webpack --mode production --config webpack.config.js"
   },
   "keywords": [],
