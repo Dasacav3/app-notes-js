@@ -6,8 +6,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d public",
-    "start": "node app",
-    "build": "webpack --mode production --config webpack.config.js"
+    "start": "node app"
   },
   "keywords": [],
   "author": "",
