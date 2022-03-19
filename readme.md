@@ -1,8 +1,8 @@
 # App Notes JS
 
-Esta aplicacion permite añadir, editar, y eliminar notas.
+This application allow add, edit and delete notes.
 
-Las tecnologias utilizadas en el desarrollo de esta app son:
+The technologies used in the development of this application are:
 
 - Express
 - Webpack
